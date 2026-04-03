@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     path: '/',
     Component: Root,
     children:[
-      {path:"Home", Component:Home},
+      {path: 'Home', Component:Home},
       {path: 'mobile', Component: Mobile},
       {path: 'product', Component:Product },
       {path:"Users",
@@ -33,10 +33,16 @@ const router = createBrowserRouter([
         path:'user/:userId',
         loader:({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
         Component: Details
+       },
+          {
+        path:"*",
+        element: <h3>Not Found 404 Error</h3>
        }
+  
     ]
 
-  }
+  },
+    
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>

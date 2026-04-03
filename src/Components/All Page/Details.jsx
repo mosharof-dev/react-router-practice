@@ -1,11 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import './Details.css'; 
 
 const Details = () => {
     const user = useLoaderData();
     // Destructuring missing data
     const { name, email, phone, website, address, company } = user;
+const naviGate = useNavigate();
+
 
     return (
         <div className="container">
@@ -35,6 +37,7 @@ const Details = () => {
 
                 <div className="card-footer">
                     <button className="contact-btn">Message User</button>
+                    <button onClick={() => naviGate(-1)} className="contact-btn">Go Back</button>
                 </div>
             </article>
         </div>
