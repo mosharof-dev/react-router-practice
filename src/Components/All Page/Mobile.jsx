@@ -5,7 +5,8 @@ const Mobile = () => {
         <div>
             
             <h1>I am From Bangladesh</h1>
-            
+
+                  
         </div>
     );
 };
